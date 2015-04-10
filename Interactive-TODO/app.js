@@ -10,15 +10,15 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
-
+var services = require('./routes/todoServices');
+var dbConfig = require('./config/db');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/todoApp', function(err) {
+
+mongoose.connect(dbConfig.url, function(err) {
 	if(err) {
-		console.log('connection error', err);
+		console.log('connection error to the database', err);
 	} else {
-		console.log('connection successful');
+		console.log('connection successful to the database');
 	}
 });
 
@@ -36,8 +36,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
+//todo services to be served
+app.use('/', services);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
