@@ -1,3 +1,8 @@
+/**
+ * This file describes the complete application initial setup
+ * It contains all the middleware imports
+ */
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
