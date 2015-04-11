@@ -7,24 +7,8 @@ var TodoServices = express.Router();
 // handle things like api calls
 // authentication routes
 
-TodoServices.get('/api/todo', function(req, res, next) {
-    console.log('Fetching todos');
-    // use mongoose to get all todos in the database
-    Todo.find(function(err, todo) {
 
-        // if there is an error retrieving, send the error.
-        // nothing after res.send(err) will execute
-        if (err) {
-            next(err);
-            res.send(err);
-        }
-        res.json(todo); // return all todo in JSON format
-        console.log(todo);
-    });
-
-});
-
-TodoServices.get('/api/note', function(req, res, next) {
+TodoServices.get('/all', function(req, res, next) {
     console.log('Fetching notes');
     // use mongoose to get all todos in the database
     Todo.find(function(err, todo) {
