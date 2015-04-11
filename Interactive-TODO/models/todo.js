@@ -1,3 +1,6 @@
+/*
+This file contains all the mongodb schema level information
+ */
 // grab the mongoose module
 var mongoose = require('mongoose');
 var todoSchema = new mongoose.Schema({

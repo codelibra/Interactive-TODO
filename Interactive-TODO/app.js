@@ -12,8 +12,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 
 // services is the backend services which connect to the database
-var todoServices     = require('./services/todoServices');
-var noteServices     = require('./services/noteServices');
+var todoServices = require('./services/todoServices');
+var noteServices = require('./services/noteServices');
 
 
 var dbConfig     = require('./config/db');
@@ -31,8 +31,8 @@ mongoose.connect(dbConfig.url, function(err) {
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('views', path.join(__dirname, '/public/views'));
+app.set('view engine','jade')
 app.set('env','development');
 
 // uncomment after placing your favicon in /public
