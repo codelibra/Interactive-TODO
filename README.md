@@ -22,3 +22,11 @@ due date and time -- the deadline Ex: 14 April, Tuesday 5pm 2015
 priority --  On a scale of 5, what is the priority of the given todo  Ex: 2
 group -- this is to divide the todo's into groups, which should be created before hand Ex: personnal
 subtodo -- dividing the todo into a array of subtodo Ex: remind about wedding, remind about bills
+
+
+UI:
+Add a UI to the application using angular js
+Left side should have a navigation bar with the todo grouped by groups
+each group should have it's corresponding todo
+clicking on a particular todo will show it's details in the center
+we can update a todo from the centre panel
