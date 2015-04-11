@@ -22,7 +22,6 @@ TodoServices.get('/all', function(req, res, next) {
 
 TodoServices.post('/addTodo', function(req, res, next) {
     console.log('Adding todo');
-    console.log(req.body);
     Todo.create(req.body, function (err, post) {
         if (err){
             next(err);
@@ -33,9 +32,22 @@ TodoServices.post('/addTodo', function(req, res, next) {
       });
 });
 
+TodoServices.put('/updateTodo/:id', function(req, res, next) {
+    console.log('Update todo');
+    Todo.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
+        if (err){
+            next(err);
+            res.send(err);
+        }
+        //return the deleted todo
+        Todo.findById(req.params.id , function(err, todo){
+            res.json(todo);
+        });
+      });
+});
+
 TodoServices.delete('/deleteTodo/:id', function(req, res, next) {
     console.log('Delete todo');
-    console.log(req.params);
     Todo.findByIdAndRemove(req.params.id, req.body, function (err, post) {
         if (err){
             next(err);
