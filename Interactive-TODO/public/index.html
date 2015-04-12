@@ -1,6 +1,6 @@
 <!-- public/index.html -->
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
 <head>
     <meta charset="UTF-8">
     <base href="/">
@@ -16,24 +16,26 @@
 
     <!-- ANGULAR CUSTOM -->
     <script src="js/controllers/mainController.js"></script>
-    <script src="js/controllers/todoCotroller.js"></script>
-    <script src="js/services/NoteController.js"></script>
+    <script src="js/controllers/todoController.js"></script>
+    <script src="js/controllers/noteController.js"></script>
+    <script src="js/services/todoUIService.js"></script>
+    <script src="js/services/noteUIService.js"></script>
     <script src="js/appUIRoutes.js"></script>
     <script src="js/appUI.js"></script>
 </head>
 
-<body ng-app="Interactive-TODO" ng-controller="todoController">
+<body ng-controller="mainController">
 <div class="container">
 
     <!-- HEADER -->
     <nav class="navbar navbar-inverse">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Stencil: Node and Angular</a>
+            <a class="navbar-brand" href="/">{{ todo }}</a>
         </div>
 
         <!-- LINK TO OUR PAGES. ANGULAR HANDLES THE ROUTING HERE -->
         <ul class="nav navbar-nav">
-            <li><a href="/todo">Nerds</a></li>
+            <li><a href="/note">{{ todo }}</a></li>
         </ul>
     </nav>
 

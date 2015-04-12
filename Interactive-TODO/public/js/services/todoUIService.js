@@ -1,11 +1,11 @@
 /*
 UI services to get the data from the backend
  */
+var todoApp = angular.module('todoApp');
 
-angular.module('TodoUIService', []).factory('Todo', ['$http', function($http) {
+todoApp.factory('todoUIService', ['$http', function($http) {
 
     return {
-        // call to get all nerds
         get : function() {
             return $http.get('/todo/all');
         },
@@ -21,6 +21,6 @@ angular.module('TodoUIService', []).factory('Todo', ['$http', function($http) {
         put : function(todo) {
             return $http.put('/todo/updateTodo/'+id,todo);
         }
-    }
+    };
 
 }]);
