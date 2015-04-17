@@ -41,5 +41,5 @@ Make changes to the index.html and the UI services to show the data in place.
 2. sidebars should show the todo in respective groups
 3. when clicking on  a todo in the sidebar, the same should expand in the centre
 4. the centre should be completely editable after clicking the edit button
-5. it should allow the addition of subtasks, changing the priority, changing the title etc.
+5. it should allow the addition of subtasks, changing the priority, changing the title etc..
 
