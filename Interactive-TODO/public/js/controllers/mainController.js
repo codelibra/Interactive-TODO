@@ -10,7 +10,7 @@ todoApp.controller('mainController', ['$scope', 'todoUIService', function($scope
 
         $scope.populateTodo = function(id){
         	var fetchedTodos = $scope.todos;
-    	    
+
         	for ( todo in fetchedTodos ){
         		if(fetchedTodos[todo]._id == id ){
         		  	$scope.selectedTodo = fetchedTodos[todo];

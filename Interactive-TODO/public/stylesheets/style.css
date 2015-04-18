@@ -2,15 +2,21 @@
 
 html, body { margin: 0; padding: 0; color: #3d3d3d; background-color: #EEE; font-family: Lato; }
 
-h1 { font-family: Oswald; text-transform: uppercase; border-bottom: 1px solid #aaa; margin-bottom: 0; }
+h1 { font-family: Inconsolata; border-bottom: 1px solid #aaa; margin-bottom: 0; }
+
 div#lists h1 { text-align: center; margin-left: 24px; margin-right: 24px; }
 
 div#main {
     margin-left: 340px;
 }
+
 div#items {
     max-width: 600px;
     margin: 0 auto;
+}
+
+div#items h1 {
+    text-transform: capitalize;
 }
 
 div#lists {
@@ -25,12 +31,12 @@ div#lists {
 }
 
 div#lists ul {
-    font-family: Oswald;
+    font-family: Inconsolata;
     font-size: 18px;
     line-height: 24px;
     list-style: none;
     padding: 0;
-    text-transform: uppercase;
+    text-transform: capitalize;
     margin: 0;
 }
 
@@ -40,7 +46,7 @@ div#lists ul li {
 }
 
 div#lists ul li:hover {
-    background-color: #3b4650;
+    background-color: #501511;
 }
 div#lists ul li.selected {
     background-color: #38564D;
@@ -54,8 +60,8 @@ input {
 }
 
 div#lists input {
-    font-family: Oswald;
-    text-transform: uppercase;
+    font-family: Inconsolata;
+    text-transform: capitalize;
     font-size: 18px;
     line-height: 24px;
     padding: 14px 24px;
@@ -120,11 +126,11 @@ ul li button:hover {
 }
 
 #lists ::-moz-placeholder {  /* Firefox 19+ */
-   color: #666;  
+   color: #666;
 }
 
-#lists :-ms-input-placeholder {  
-   color: #666;  
+#lists :-ms-input-placeholder {
+   color: #666;
 }
 
 
