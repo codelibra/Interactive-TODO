@@ -30,8 +30,8 @@
             <ul ng-repeat="group in groups track by $index">
                 <h4>{{group}}</h4>
                 <ul ng-show="todo.group == group" ng-repeat="todo in todos">
-                     <li id="{{todo._id}}"  ng-click="populateTodo(todo._id)">{{todo.name}}
-                    <button ng-click="removeTodo(todo._id)" class="enabled">&times;</button>
+                    <li id="{{todo._id}}"  ng-click="populateTodo(todo._id)">{{todo.name}}
+                        <button ng-click="removeTodo(todo._id)" class="enabled">&times;</button>
                     </li>
                 </ul>
                 <form id="newList" ng-submit="submitTodo(group, $index)">

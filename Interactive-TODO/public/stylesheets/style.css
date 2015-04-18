@@ -11,7 +11,7 @@ h4 { font-family: Inconsolata; border-bottom: 2px solid #AA9F50; margin-bottom: 
 div#lists h1 { text-align: center; margin-left: 24px; margin-right: 24px; }
 
 div#main {
-    margin-left: 340px;
+    margin-left: 50px;
 }
 
 div#items {
@@ -28,6 +28,7 @@ form#newGroup {
    bottom:0;
    height:5%;   /* Height of the footer */
    background: transparent;
+   margin-left: 300px;
 }
 div#lists {
     width: 300px;
