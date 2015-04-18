@@ -23,6 +23,12 @@ div#items h1 {
     text-transform: capitalize;
 }
 
+form#newGroup {
+   position:absolute;
+   bottom:0;
+   height:5%;   /* Height of the footer */
+   background: transparent;
+}
 div#lists {
     width: 300px;
     background-color: #252D32;
@@ -32,6 +38,9 @@ div#lists {
     right: 300;
     bottom: 0;
     top: 0;
+    float:left;
+    overflow-y: auto;
+    height: 100%;
 }
 
 div#lists ul {

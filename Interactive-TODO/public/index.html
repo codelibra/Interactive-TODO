@@ -39,10 +39,6 @@
                     <input type="submit" style="display:none">
                 </form>
             </ul>
-            <form id="newGroup" ng-submit="submitGroup()">
-                <input type="text" ng-model="newGroup" id="listName" placeholder="Add group...">
-                <input type="submit" style="display:none">
-            </form>
         </div>
         <div id="main">
             <div id="items">
@@ -58,6 +54,10 @@
                     <input type="submit" style="display:none">
                 </form>
             </div>
+            <form id="newGroup" ng-submit="submitGroup()">
+                <input type="text" ng-model="newGroup" id="groupName" placeholder="Add group...">
+                <input type="submit" style="display:none">
+            </form>
         </div>
     </body>
 </html>

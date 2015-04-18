@@ -73,4 +73,22 @@ todoApp.controller('mainController', ['$scope', 'todoUIService', function($scope
         });
     };
 
+    $scope.submitGroup = function() {
+        console.log("submit group");
+        var obj = {};
+        obj.name = $scope.newGroup;
+        obj.group = $scope.newGroup;
+        //create the new group
+        todoUIService.create(obj).then(function(data) {
+            //update the UI data and set the selelcted element to the new todo
+            if (data.data !== null) {
+                $scope.todos.unshift(data.data);
+                groupTodo();
+                console.log($scope.todos);
+            }
+        });
+        //clear the input text box once the todo is submitted
+        $scope.newGroup = '';
+    };
+
 }]);
