@@ -46,7 +46,7 @@ div#lists ul li {
 }
 
 div#lists ul li:hover {
-    background-color: #501511;
+    background-color: #3B992E;
 }
 div#lists ul li.selected {
     background-color: #38564D;
@@ -95,15 +95,15 @@ div#lists ul li button {
     float: right;
     position: relative;
     top: -2px;
-    color: #666;
+    color: #BB151A;
 }
-div#lists ul li:hover button { color: #B66; }
+div#lists ul li:hover button { color: #070404; }
 
 ul li button {
     border: none;
     background: transparent;
     font-size: 18px;
-    color: #bbb;
+    color: #16BB27;
     cursor: pointer;
     outline: none;
     padding: 0;
@@ -114,7 +114,8 @@ ul li button.enabled {
     visibility: visible;
 }
 ul li button:hover {
-    color: #B66;
+    color: #16BB27;
+    background: red;
 }
 
 #lists ::-webkit-input-placeholder {
