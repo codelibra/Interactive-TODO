@@ -1,60 +1,63 @@
 <!-- public/index.html -->
 <!DOCTYPE html>
 <html lang="en" ng-app="todoApp">
-<head>
-    <meta charset="UTF-8">
-    <base href="/">
-
-    <title>Interactive-TODO</title>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="stylesheets/style.css">
-    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-
-    <!-- JS -->
-    <script src="libs/angular/angular.min.js"></script>
-    <script src="libs/angular-route/angular-route.min.js"></script>
-    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
-
-    <!-- ANGULAR CUSTOM -->
-    <script src="js/controllers/mainController.js"></script>
-    <script src="js/controllers/todoController.js"></script>
-    <script src="js/controllers/noteController.js"></script>
-    <script src="js/services/todoUIService.js"></script>
-    <script src="js/services/noteUIService.js"></script>
-    <script src="js/appUIRoutes.js"></script>
-    <script src="js/appUI.js"></script>
-</head>
-
-<body ng-controller="mainController">
-    <div id="lists">
-        <h1>My Lists</h1>
-        <ul ng-repeat="todo in todos">
-            <li id="{{todo._id}}"  ng-click="populateTodo(todo._id)">{{todo.name}}
-            <button ng-click="removeTodo(todo._id)" class="enabled">&times;</button>
-            </li>
-        </ul>
-        <form id="newList" ng-submit="submitTodo()">
-            <input type="text" ng-model="newTodo" id="listName" placeholder="Create a new todo...">
-            <input type="submit" style="display:none">
-        </form>
-    </div>
-    <div id="main">
-        <div id="items">
-            <h1>{{selectedTodo.name}}</h1>
-            <ul>
-                <li><button>&times;</button>{{selectedTodo.deadline}}</li>
-                <li><button>&times;</button>{{selectedTodo.priority}}</li>
-                <li><button>&times;</button>{{selectedTodo.group}}</li>
-                <li><button>&times;</button>{{selectedTodo.subtodo}}</li>
+    <head>
+        <meta charset="UTF-8">
+        <base href="/">
+        <title>Interactive-TODO</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="stylesheets/style.css">
+        <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <!-- JS -->
+        <script src="libs/angular/angular.min.js"></script>
+        <script src="libs/angular-route/angular-route.min.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
+        <!-- ANGULAR CUSTOM -->
+        <script src="js/constants/constants.js"></script>
+        <script src="js/controllers/mainController.js"></script>
+        <script src="js/controllers/todoController.js"></script>
+        <script src="js/controllers/noteController.js"></script>
+        <script src="js/services/todoUIService.js"></script>
+        <script src="js/services/noteUIService.js"></script>
+        <script src="js/appUIRoutes.js"></script>
+        <script src="js/appUI.js"></script>
+    </head>
+    <body ng-controller="mainController">
+        <div id="lists">
+            <h1>My Todo's</h1>
+            <ul ng-repeat="group in groups track by $index">
+                <h4>{{group}}</h4>
+                <ul ng-show="todo.group == group" ng-repeat="todo in todos">
+                     <li id="{{todo._id}}"  ng-click="populateTodo(todo._id)">{{todo.name}}
+                    <button ng-click="removeTodo(todo._id)" class="enabled">&times;</button>
+                    </li>
+                </ul>
+                <form id="newList" ng-submit="submitTodo(group, $index)">
+                    <input type="text" ng-model="newTodo[$index]" id="listName" placeholder="Add todo...">
+                    <input type="submit" style="display:none">
+                </form>
             </ul>
-            <form id="newItem">
-                <input type="text" id="itemName" placeholder="Add a new subtask...">
+            <form id="newGroup" ng-submit="submitGroup()">
+                <input type="text" ng-model="newGroup" id="listName" placeholder="Add group...">
                 <input type="submit" style="display:none">
             </form>
         </div>
-    </div>
-</body>
+        <div id="main">
+            <div id="items">
+                <h1>{{selectedTodo.name}}</h1>
+                <ul>
+                    <li><button>&times;</button>{{selectedTodo.deadline}}</li>
+                    <li><button>&times;</button>{{selectedTodo.priority}}</li>
+                    <li><button>&times;</button>{{selectedTodo.group}}</li>
+                    <li><button>&times;</button>{{selectedTodo.subtodo}}</li>
+                </ul>
+                <form id="newItem">
+                    <input type="text" id="itemName" placeholder="Add a new subtask...">
+                    <input type="submit" style="display:none">
+                </form>
+            </div>
+        </div>
+    </body>
 </html>

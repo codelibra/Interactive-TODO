@@ -43,3 +43,7 @@ Make changes to the index.html and the UI services to show the data in place.
 4. the centre should be completely editable after clicking the edit button
 5. it should allow the addition of subtasks, changing the priority, changing the title etc..
 
+Group the sidebar by the groups.
+At the end of each group there should be option to add todo
+At the end of  all of them there shoudl be form add group
+

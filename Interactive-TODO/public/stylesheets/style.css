@@ -2,7 +2,11 @@
 
 html, body { margin: 0; padding: 0; color: #3d3d3d; background-color: #EEE; font-family: Lato; }
 
+
 h1 { font-family: Inconsolata; border-bottom: 1px solid #aaa; margin-bottom: 0; }
+
+
+h4 { font-family: Inconsolata; border-bottom: 2px solid #AA9F50; margin-bottom: 0; }
 
 div#lists h1 { text-align: center; margin-left: 24px; margin-right: 24px; }
 
@@ -33,7 +37,7 @@ div#lists {
 div#lists ul {
     font-family: Inconsolata;
     font-size: 18px;
-    line-height: 24px;
+    line-height: 20px;
     list-style: none;
     padding: 0;
     text-transform: capitalize;
