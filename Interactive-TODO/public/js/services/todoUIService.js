@@ -19,7 +19,8 @@ todoApp.factory('todoUIService', ['$http', function($http) {
         },
 
         put : function(todo) {
-            return $http.put('/todo/updateTodo/'+id,todo);
+            console.log(todo);
+            return $http.put('/todo/updateTodo/'+todo._id,todo);
         }
     };
 

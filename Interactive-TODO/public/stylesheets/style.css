@@ -5,13 +5,16 @@ html, body { margin: 0; padding: 0; color: #3d3d3d; background-color: #EEE; font
 
 h1 { font-family: Inconsolata; border-bottom: 1px solid #aaa; margin-bottom: 0; }
 
-
 h4 { font-family: Inconsolata; border-bottom: 2px solid #AA9F50; margin-bottom: 0; }
 
 div#lists h1 { text-align: center; margin-left: 24px; margin-right: 24px; }
 
 div#main {
     margin-left: 50px;
+}
+
+div#main h1{
+    font-size: 30px;
 }
 
 div#items {
@@ -30,6 +33,7 @@ form#newGroup {
    background: transparent;
    margin-left: 300px;
 }
+
 div#lists {
     width: 300px;
     background-color: #252D32;
@@ -98,6 +102,7 @@ div#items ul {
     font-size: 18px;
     line-height: 24px;
     margin: 0;
+    margin-left: 22px;
 }
 
 div#items ul li {

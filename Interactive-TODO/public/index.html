@@ -42,12 +42,21 @@
         </div>
         <div id="main">
             <div id="items">
-                <h1>{{selectedTodo.name}}</h1>
+                <h1 ng-hide="selectedTodo.editing" ng-dblclick="updateTodo(selectedTodo)">{{selectedTodo.name}}</h1>
+                <input ng-show="selectedTodo.editing" ng-model="selectedTodo.name"
+                    ng-blur="doneUpdate(selectedTodo)" autofocus />
                 <ul>
-                    <li><button>&times;</button>{{selectedTodo.deadline}}</li>
-                    <li><button>&times;</button>{{selectedTodo.priority}}</li>
-                    <li><button>&times;</button>{{selectedTodo.group}}</li>
-                    <li><button>&times;</button>{{selectedTodo.subtodo}}</li>
+                    <li>{{selectedTodo.deadline}}</li>
+                    <li ng-hide="selectedTodo.editing" ng-dblclick="updateTodo(selectedTodo)">
+                    {{selectedTodo.priority}}</li>
+                    <input ng-show="selectedTodo.editing" ng-model="selectedTodo.priority"
+                    ng-blur="doneUpdate(selectedTodo)" autofocus />
+                    <li ng-hide="selectedTodo.editing" ng-dblclick="updateTodo(selectedTodo)">{{selectedTodo.group}}</li>
+                    <input ng-show="selectedTodo.editing" ng-model="selectedTodo.group"
+                    ng-blur="doneUpdate(selectedTodo)" autofocus />
+                    <li ng-hide="selectedTodo.editing" ng-dblclick="updateTodo(selectedTodo)">{{selectedTodo.subtodo}}</li>
+                    <input ng-show="selectedTodo.editing" ng-model="selectedTodo.subtodo"
+                    ng-blur="doneUpdate(selectedTodo)" autofocus />
                 </ul>
                 <form id="newItem">
                     <input type="text" id="itemName" placeholder="Add a new subtask...">

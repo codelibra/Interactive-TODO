@@ -45,6 +45,9 @@ todoApp.controller('mainController', ['$scope', 'todoUIService', function($scope
         for (var todo in fetchedTodos) {
             if (fetchedTodos[todo]._id == id) {
                 $scope.selectedTodo = fetchedTodos[todo];
+                //making it non editing mode by default
+                //when user tries to double click it will be editable
+                $scope.selectedTodo.editing = false;
             }
         }
     };
@@ -89,6 +92,29 @@ todoApp.controller('mainController', ['$scope', 'todoUIService', function($scope
         });
         //clear the input text box once the todo is submitted
         $scope.newGroup = '';
+    };
+
+    $scope.updateTodo = function(selectedTodo){
+        //setting the todo to be editable only
+        //with this flag it will convert to an input box
+        selectedTodo.editing = true;
+    };
+
+    $scope.doneUpdate = function(selectedTodo){
+                //update the todo with the new values
+        todoUIService.put(selectedTodo).then(function(data) {
+            console.log(data.data);
+            //update the UI data
+            for (var todo in $scope.todos) {
+                //considering the fact that the id of the todo will remain the same
+                if ($scope.todos[todo]._id == selectedTodo._id) {
+                    $scope.todos[todo] = selectedTodo;
+                    groupTodo();
+                    break;
+                }
+            }
+        });
+        selectedTodo.editing = false;
     };
 
 }]);
