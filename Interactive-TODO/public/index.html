@@ -42,19 +42,19 @@
         </div>
         <div id="main">
             <div id="items">
-                <h1 ng-hide="selectedTodo.editing" ng-dblclick="updateTodo(selectedTodo)">{{selectedTodo.name}}</h1>
+                <h1 ng-hide="selectedTodo.editing" ng-click="updateTodo(selectedTodo)">{{selectedTodo.name}}</h1>
                 <input ng-show="selectedTodo.editing" ng-model="selectedTodo.name"
                     ng-blur="doneUpdate(selectedTodo)" autofocus />
                 <ul>
                     <li>{{selectedTodo.deadline}}</li>
-                    <li ng-hide="selectedTodo.editing" ng-dblclick="updateTodo(selectedTodo)">
+                    <li ng-hide="selectedTodo.editing" ng-click="updateTodo(selectedTodo)">
                     {{selectedTodo.priority}}</li>
                     <input ng-show="selectedTodo.editing" ng-model="selectedTodo.priority"
                     ng-blur="doneUpdate(selectedTodo)" autofocus />
-                    <li ng-hide="selectedTodo.editing" ng-dblclick="updateTodo(selectedTodo)">{{selectedTodo.group}}</li>
+                    <li ng-hide="selectedTodo.editing" ng-click="updateTodo(selectedTodo)">{{selectedTodo.group}}</li>
                     <input ng-show="selectedTodo.editing" ng-model="selectedTodo.group"
                     ng-blur="doneUpdate(selectedTodo)" autofocus />
-                    <li ng-hide="selectedTodo.editing" ng-dblclick="updateTodo(selectedTodo)">{{selectedTodo.subtodo}}</li>
+                    <li ng-hide="selectedTodo.editing" ng-click="updateTodo(selectedTodo)">{{selectedTodo.subtodo}}</li>
                     <input ng-show="selectedTodo.editing" ng-model="selectedTodo.subtodo"
                     ng-blur="doneUpdate(selectedTodo)" autofocus />
                 </ul>
