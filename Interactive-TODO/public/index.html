@@ -6,7 +6,6 @@
         <base href="/">
         <title>Interactive-TODO</title>
         <!-- CSS -->
-        <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="stylesheets/style.css">
         <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
@@ -43,7 +42,7 @@
         <div id="main">
             <div id="items">
                 <h1 ng-hide="selectedTodo.editing" ng-click="updateTodo(selectedTodo)">{{selectedTodo.name}}</h1>
-                <input ng-show="selectedTodo.editing" ng-model="selectedTodo.name"
+                <input id="todoTitle" ng-show="selectedTodo.editing" ng-model="selectedTodo.name"
                     ng-blur="doneUpdate(selectedTodo)" autofocus />
                 <ul>
                     <li>{{selectedTodo.deadline}}</li>
