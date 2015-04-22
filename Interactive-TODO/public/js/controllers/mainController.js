@@ -94,6 +94,15 @@ todoApp.controller('mainController', ['$scope', 'todoUIService', function($scope
         $scope.newGroup = '';
     };
 
+    $scope.submitSubtodo = function() {
+        var obj = $scope.selectedTodo;
+        obj.subtodo.push($scope.newSubtodo);
+        console.log(obj);
+        $scope.doneUpdate(obj);
+        //clear the input text box once the sub todo is submitted
+        $scope.newSubtodo = '';
+    };
+
     $scope.updateTodo = function(selectedTodo){
         //setting the todo to be editable only
         //with this flag it will convert to an input box

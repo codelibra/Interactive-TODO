@@ -43,7 +43,7 @@
             <div id="items">
                 <h1 ng-hide="selectedTodo.editing" ng-click="updateTodo(selectedTodo)">{{selectedTodo.name}}</h1>
                 <input id="todoTitle" ng-show="selectedTodo.editing" ng-model="selectedTodo.name"
-                    ng-blur="doneUpdate(selectedTodo)" autofocus />
+                    ng-blur="doneUpdate(selectedTodo)" auto-focus />
                 <ul>
                     <li>{{selectedTodo.deadline}}</li>
                     <li ng-hide="selectedTodo.editing" ng-click="updateTodo(selectedTodo)">
@@ -53,12 +53,18 @@
                     <li ng-hide="selectedTodo.editing" ng-click="updateTodo(selectedTodo)">{{selectedTodo.group}}</li>
                     <input ng-show="selectedTodo.editing" ng-model="selectedTodo.group"
                     ng-blur="doneUpdate(selectedTodo)" autofocus />
-                    <li ng-hide="selectedTodo.editing" ng-click="updateTodo(selectedTodo)">{{selectedTodo.subtodo}}</li>
-                    <input ng-show="selectedTodo.editing" ng-model="selectedTodo.subtodo"
-                    ng-blur="doneUpdate(selectedTodo)" autofocus />
                 </ul>
-                <form id="newItem">
-                    <input type="text" id="itemName" placeholder="Add a new subtask...">
+                <ol id="subtodoList" ng-repeat="subtodo in selectedTodo.subtodo track by $index">
+                    <label ng-hide="selectedTodo.editing" ng-click="updateTodo(selectedTodo)">
+                    <input type="checkbox">{{selectedTodo.subtodo[$index]}}
+                    </label>
+
+                    <label ng-show="selectedTodo.editing"><input type="checkbox"></label>
+                    <input ng-show="selectedTodo.editing" ng-model="selectedTodo.subtodo[$index]"
+                    ng-blur="doneUpdate(selectedTodo)" autofocus />
+                </ol>
+                <form id="newItem" ng-submit="submitSubtodo()">
+                    <input type="text" ng-model="newSubtodo" placeholder="Add a new subtask...">
                     <input type="submit" style="display:none">
                 </form>
             </div>

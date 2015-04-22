@@ -75,6 +75,7 @@ input {
     border: none;
     outline: none;
     margin: 0;
+    font-size: 15px;
 }
 
 div#lists input {
@@ -94,17 +95,19 @@ div#items ul input {
     padding: 14px 0;
     width: 100%;
     margin-left: -22px;
+    text-transform: capitalize;
 }
 
 input#todoTitle{
-    font-family: Inconsolata; 
-    border-bottom: 1px solid #aaa; 
+    font-family: Inconsolata;
+    border-bottom: 1px solid #aaa;
     margin-bottom: 0;
-    font-size: 30px; !important
+    font-size: 30px;
     font-weight: bold;
     width : 100%;
     margin-top: 0.67em;
     text-transform: capitalize;
+    color : #E18728;
  }
 
 div#items ul {
@@ -147,6 +150,11 @@ ul li button.enabled {
 ul li button:hover {
     color: #16BB27;
     background: red;
+}
+
+#subtodoList label input{
+    display : inline;
+    margin-right : 2em;
 }
 
 #lists ::-webkit-input-placeholder {
