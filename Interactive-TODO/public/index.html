@@ -43,7 +43,7 @@
             <div id="items">
                 <h1 ng-hide="selectedTodo.editing" ng-click="updateTodo(selectedTodo)">{{selectedTodo.name}}</h1>
                 <input id="todoTitle" ng-show="selectedTodo.editing" ng-model="selectedTodo.name"
-                    ng-blur="doneUpdate(selectedTodo)" auto-focus />
+                ng-blur="doneUpdate(selectedTodo)" auto-focus />
                 <ul>
                     <li>{{selectedTodo.deadline}}</li>
                     <li ng-hide="selectedTodo.editing" ng-click="updateTodo(selectedTodo)">
@@ -55,13 +55,25 @@
                     ng-blur="doneUpdate(selectedTodo)" autofocus />
                 </ul>
                 <ol id="subtodoList" ng-repeat="subtodo in selectedTodo.subtodo track by $index">
-                    <label ng-hide="selectedTodo.editing" ng-click="updateTodo(selectedTodo)">
-                    <input type="checkbox">{{selectedTodo.subtodo[$index]}}
-                    </label>
+                    <div ng-hide="selectedTodo.editing">
+                        <div style="width:50px;float: left">
+                            <input type="checkbox">
+                        </div>
+                        <div style="width: 500px;overflow: auto;" ng-click="updateTodo(selectedTodo)">
+                            {{selectedTodo.subtodo[$index]}}
+                        </div>
+                    </div>
 
-                    <label ng-show="selectedTodo.editing"><input type="checkbox"></label>
-                    <input ng-show="selectedTodo.editing" ng-model="selectedTodo.subtodo[$index]"
-                    ng-blur="doneUpdate(selectedTodo)" autofocus />
+                    <div ng-show="selectedTodo.editing">
+                        <div style="width:50px;float: left">
+                            <input type="checkbox">
+                        </div>
+                        <div style="width: 500px;overflow: auto;" ng-click="updateTodo(selectedTodo)">
+                            <input ng-model="selectedTodo.subtodo[$index]"
+                            ng-blur="doneUpdate(selectedTodo)" autofocus />
+                        </div>
+                    </div>
+
                 </ol>
                 <form id="newItem" ng-submit="submitSubtodo()">
                     <input type="text" ng-model="newSubtodo" placeholder="Add a new subtask...">
