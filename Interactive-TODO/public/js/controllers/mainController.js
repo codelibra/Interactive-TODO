@@ -1,4 +1,4 @@
-var todoApp     = angular.module('todoApp', []);
+var todoApp     = angular.module('todoApp', ['ui.bootstrap']);
 
 
 todoApp.controller('mainController', ['$scope', 'todoUIService', function($scope, todoUIService) {

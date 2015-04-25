@@ -1,41 +1,34 @@
 *, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-html, body { margin: 0; padding: 0; color: #3d3d4d; background-color: #EEE; font-family: Lato; float: ;;; }
-
-
-h1 { font-family: Inconsolata; border-bottom: 1px solid #aaa; margin-bottom: 0; }
-
-h4 { font-family: Inconsolata; border-bottom: 2px solid #AA9F50; margin-bottom: 0; }
-
-div#lists h1 { text-align: center; margin-left: 24px; margin-right: 24px; }
-
-div#main {
-    margin-left: 50px;
+html, body {
+    margin: 0;
+    padding: 0;
+    color: #3d3d4d;
+    background-color: #EEE;
+    font-family: Lato;
 }
 
-div#main h1{
-    font-size: 30px;
+
+h1 {
+    font-family: Inconsolata;
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 0;
 }
 
-div#items {
-    max-width: 600px;
-    margin: 0 auto;
+h3 {
+    font-family: Inconsolata;
+    border-bottom: 2px solid #AA9F50;
+    margin-bottom: 0;
+    color : black;
 }
 
-div#items h1 {
-    text-transform: capitalize;
-}
-    float: left;
-
-form#newGroup {
-   position:absolute;
-   bottom:0;
-   height:5%;   /* Height of the footer */
-   background: transparent;
-   margin-left: 300px;
+#todos h1 {
+    text-align: center;
+    margin-left: 24px;
+    margin-right: 24px;
 }
 
-div#lists {
+#todos {
     width: 300px;
     background-color: #252D32;
     color: #ccc;
@@ -49,7 +42,7 @@ div#lists {
     height: 100%;
 }
 
-div#lists ul {
+#todos ul {
     font-family: Inconsolata;
     font-size: 18px;
     line-height: 20px;
@@ -59,16 +52,89 @@ div#lists ul {
     margin: 0;
 }
 
-div#lists ul li {
+#todos ul li {
     cursor: pointer;
-    padding: 14px 24px;
+    padding: 10px 10px 10px 10px;
 }
 
-div#lists ul li:hover {
+#todos ul li:hover {
     background-color: #3B992E;
 }
-div#lists ul li.selected {
+#todos ul li.selected {
     background-color: #38564D;
+}
+
+#todos input {
+    font-family: Inconsolata;
+    text-transform: capitalize;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 14px 24px;
+    color: #eee;
+}
+
+#todos ul li button {
+    float: right;
+    position: relative;
+    top: -2px;
+    color: #BB151A;
+}
+
+#todos ul li:hover button {
+    color: #070404;
+}
+
+
+#main {
+    margin-left: 50px;
+    background-color: #EEE;
+}
+
+#main h1{
+    font-size: 30px;
+}
+
+#content {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 2%;
+}
+
+#content h1 {
+    text-transform: capitalize;
+}
+
+#content ul input {
+    font-family: Lato;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 14px 0;
+    width: 100%;
+    margin-left: -22px;
+    text-transform: capitalize;
+}
+
+#content ul {
+    font-family: Lato;
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0;
+    margin-left: 22px;
+}
+
+#content ul li {
+    margin-left: -22px;
+    padding: 14px 0;
+}
+
+#newGroup {
+   position:absolute;
+   bottom:0;
+   height:10%;   /* Height of the footer */
+   background: transparent;
+   margin-left: 300px;
 }
 
 input {
@@ -79,27 +145,8 @@ input {
     font-size: 15px;
 }
 
-div#lists input {
-    font-family: Inconsolata;
-    text-transform: capitalize;
-    font-size: 18px;
-    line-height: 24px;
-    padding: 14px 24px;
-    color: #eee;
-}
 
-
-div#items ul input {
-    font-family: Lato;
-    font-size: 18px;
-    line-height: 24px;
-    padding: 14px 0;
-    width: 100%;
-    margin-left: -22px;
-    text-transform: capitalize;
-}
-
-input#todoTitle{
+#todoTitle{
     font-family: Inconsolata;
     border-bottom: 1px solid #aaa;
     margin-bottom: 0;
@@ -110,29 +157,6 @@ input#todoTitle{
     text-transform: capitalize;
     color : #E18728;
  }
-
-div#items ul {
-    font-family: Lato;
-    list-style: none;
-    padding: 0;
-    font-size: 18px;
-    line-height: 24px;
-    margin: 0;
-    margin-left: 22px;
-}
-
-div#items ul li {
-    margin-left: -22px;
-    padding: 14px 0;
-}
-
-div#lists ul li button {
-    float: right;
-    position: relative;
-    top: -2px;
-    color: #BB151A;
-}
-div#lists ul li:hover button { color: #070404; }
 
 ul li button {
     border: none;
@@ -153,30 +177,37 @@ ul li button:hover {
     background: red;
 }
 
+
+
+/*
+Browser specific code
+ */
 #subtodoList label input{
     margin-right : 2em;
     float : left;
 }
 
-#lists ::-webkit-input-placeholder {
+#todos ::-webkit-input-placeholder {
    color: #666;
 }
 
-#lists :-moz-placeholder { /* Firefox 18- */
+#todos :-moz-placeholder { /* Firefox 18- */
    color: #666;
 }
 
-#lists ::-moz-placeholder {  /* Firefox 19+ */
+#todos ::-moz-placeholder {  /* Firefox 19+ */
    color: #666;
 }
 
-#lists :-ms-input-placeholder {
+#todos :-ms-input-placeholder {
    color: #666;
 }
 
 
 
-
+/*
+Various modals which must be injected when required
+ */
 .md-modal {
     position: fixed;
     top: 50%;
