@@ -177,6 +177,12 @@ ul li button:hover {
     background: red;
 }
 
+#reminder {
+    margin: 0 auto;
+    margin-top: 2%;
+    max-width: 600px;
+    background-color: #EEE;
+}
 
 
 /*

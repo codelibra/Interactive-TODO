@@ -3,6 +3,8 @@ var todoApp     = angular.module('todoApp', ['ui.bootstrap']);
 
 todoApp.controller('mainController', ['$scope', 'todoUIService', function($scope, todoUIService) {
 
+
+
     // Since new todo are added inside ng-repeat each scope has it's own new todo
     // henco to maintain each , using $index the array is utilized
     // Since array is not initlized automatically initialising the same

@@ -18,9 +18,9 @@
         <script src="js/constants/constants.js"></script>
         <script src="js/controllers/mainController.js"></script>
         <script src="js/controllers/todoController.js"></script>
-        <script src="js/controllers/noteController.js"></script>
         <script src="js/services/todoUIService.js"></script>
         <script src="js/services/noteUIService.js"></script>
+        <script src="js/controllers/dateController.js"></script>
         <script src="js/appUIRoutes.js"></script>
         <script src="js/appUI.js"></script>
     </head>
@@ -29,7 +29,7 @@
             <h1>My Todo's</h1>
             <ul ng-repeat="group in groups track by $index">
                 <h3 ng-click="isCollapsed = !isCollapsed" class="list-group-item-success">{{group}}
-                    <b class="caret"></b>
+                <b class="caret"></b>
                 </h3>
                 <div>
                     <ul ng-show="isCollapsed && todo.group == group" ng-repeat="todo in todos">
@@ -50,7 +50,6 @@
                 <input id="todoTitle" ng-show="selectedTodo.editing" ng-model="selectedTodo.name"
                 ng-blur="doneUpdate(selectedTodo)" auto-focus />
                 <ul>
-                    <li>{{selectedTodo.deadline}}</li>
                     <li ng-hide="selectedTodo.editing" ng-click="updateTodo(selectedTodo)">
                     {{selectedTodo.priority}}</li>
                     <input ng-show="selectedTodo.editing" ng-model="selectedTodo.priority"
@@ -82,11 +81,17 @@
                     <input type="text" ng-model="newSubtodo" placeholder="Add a new subtask...">
                     <input type="submit" style="display:none">
                 </form>
-            </div>
-            <form id="newGroup" ng-submit="submitGroup()">
-                <input type="text" ng-model="newGroup" id="groupName" placeholder="Add group...">
-                <input type="submit" style="display:none">
-            </form>
+                <div id="reminder" ng-controller="dateController">
+                    <pre>Due date is: <em>{{dt | date:'fullDate' }}</em></pre>
+                    <div ng-hide="!selectedTodo.editing" ng-show="selectedTodo.editing" style="display:inline-block; min-height:290px;">
+                        <datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+                    </div>
+                </div>
         </div>
-    </body>
+        <form id="newGroup" ng-submit="submitGroup()">
+            <input type="text" ng-model="newGroup" id="groupName" placeholder="Add group...">
+            <input type="submit" style="display:none">
+        </form>
+    </div>
+</body>
 </html>

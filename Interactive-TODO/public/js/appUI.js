@@ -1,2 +1,2 @@
 angular.module('Interactive-TODO', ['ngRoute', 'appRoutes', 'mainController',
-'todoController', 'noteController', 'todoUIService' ]);
+'todoController', 'noteController', 'todoUIService','dateController' ]);
