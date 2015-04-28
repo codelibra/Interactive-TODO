@@ -6,7 +6,10 @@ todoApp.controller('dateController', ['$scope', 'todoUIService', function($scope
   $scope.today = function() {
     $scope.dt = new Date();
   };
-  $scope.today();
+
+  $scope.setDeadline =  function(deadline){
+    $scope.dt = new Date(deadline);
+  };
 
   $scope.clear = function () {
     $scope.dt = null;
@@ -19,9 +22,7 @@ todoApp.controller('dateController', ['$scope', 'todoUIService', function($scope
 
   $scope.toggleMin = function() {
     $scope.minDate = $scope.minDate ? null : new Date();
-    console.log("hello");
   };
-  $scope.toggleMin();
 
   $scope.open = function($event) {
     $event.preventDefault();
