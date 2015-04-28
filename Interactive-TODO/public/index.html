@@ -82,9 +82,9 @@
                     <input type="submit" style="display:none">
                 </form>
                 <div id="reminder" ng-controller="dateController">
-                    <pre>Due date is: <em>{{dt | date:'fullDate' }}</em></pre>
-                    <div ng-hide="!selectedTodo.editing" ng-show="selectedTodo.editing" style="display:inline-block; min-height:290px;">
-                        <datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+                    <pre>Due date is: <em>{{selectedTodo.deadline | date:'fullDate' }}</em></pre>
+                    <div ng-hide="!selectedTodo.editing" ng-show="selectedTodo.editing" ng-blur="doneUpdate(selectedTodo)" style="display:inline-block; min-height:290px;">
+                        <datepicker ng-model="selectedTodo.deadline" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
                     </div>
                 </div>
         </div>
